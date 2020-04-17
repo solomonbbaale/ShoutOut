@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ShoutOut.Core\ShoutOut.Core.csproj" />
+  </ItemGroup>
+
 </Project>
