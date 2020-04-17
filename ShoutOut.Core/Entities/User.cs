@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ShoutOut.Core
+namespace ShoutOut.Core.Entities
 {
     public class User : Entity
     {
