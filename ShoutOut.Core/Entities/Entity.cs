@@ -1,4 +1,4 @@
-﻿namespace ShoutOut.Core
+﻿namespace ShoutOut.Core.Entities
 {
     public class Entity
     {
