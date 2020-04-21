@@ -4,6 +4,7 @@ namespace ShoutOut.Core.Entities
 {
     public class User : Entity
     {
+        public User() { }
         public User(string handle, string firstName, string lastName, string bio, string email, string profile)
         {
             Handle = handle;
