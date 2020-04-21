@@ -4,6 +4,7 @@ namespace ShoutOut.Core.Entities
 {
     public class Post : Entity
     {
+        public Post() { }
         public Post(string title, string message, User owner, int posterOwnerId, User postOwner)
         {
             Title = title;
