@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoutOut.Infrastructure", "ShoutOut.Infrastructure\ShoutOut.Infrastructure.csproj", "{8F6E8A0D-57A7-4DAC-BD8A-4B9B9AF3B985}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoutOut.ApplicationLayer", "ShoutOut.ApplicationLayer\ShoutOut.ApplicationLayer.csproj", "{A4798646-0253-4C2E-9B9C-F6675CC0B9A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,10 +36,6 @@ Global
 		{4E9FB0E1-6BCA-4477-AE1E-5067AB7DDC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E9FB0E1-6BCA-4477-AE1E-5067AB7DDC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E9FB0E1-6BCA-4477-AE1E-5067AB7DDC60}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8F6E8A0D-57A7-4DAC-BD8A-4B9B9AF3B985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8F6E8A0D-57A7-4DAC-BD8A-4B9B9AF3B985}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8F6E8A0D-57A7-4DAC-BD8A-4B9B9AF3B985}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8F6E8A0D-57A7-4DAC-BD8A-4B9B9AF3B985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
