@@ -24,7 +24,7 @@ namespace ShoutOut.Tests.Infrastructure
             var shoutOutRepository = new ShoutOutRepository<User>(context);
 
             shoutOutRepository.Add(_user);
-           
+
             shoutOutRepository.Save();
 
             context.Users.Count().ShouldBe(1);
@@ -45,6 +45,24 @@ namespace ShoutOut.Tests.Infrastructure
             shoutOutRepository.Delete(_user);
 
             shoutOutRepository.Save();
+        }
+
+        [Fact]
+        public void Creating_AnewEntity_AssignAnIdId()
+        {
+
+            var context = new ShoutOutInMemoryDbContextFactory<ShoutOutContext>()
+                .Create("shoutout");
+
+            var shoutOutRepository = new ShoutOutRepository<User>(context);
+
+            shoutOutRepository.Add(_user);
+
+            shoutOutRepository.Save();
+
+            _user.Id.ShouldNotBeNull();
+
+            shoutOutRepository.GetEntityById(_user.Id).ShouldNotBeNull();
         }
     }
 }

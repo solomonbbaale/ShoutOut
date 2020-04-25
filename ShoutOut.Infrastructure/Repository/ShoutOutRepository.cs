@@ -1,20 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using ShoutOut.Core.Entities;
 
 namespace ShoutOut.Infrastructure.Repository
 {
-    public class ShoutOutContext : DbContext
-    {
-        public ShoutOutContext(DbContextOptions<ShoutOutContext> options)
-        : base(options)
-        {
-
-        }
-
-        public DbSet<User> Users { get; set; }
-        public DbSet<Post> Posts { get; set; }
-    }
-
     public class ShoutOutRepository<T> : IRepository<T>
     where T : Entity
     {
@@ -37,9 +27,15 @@ namespace ShoutOut.Infrastructure.Repository
             var item = _dbset.Remove(entity);
         }
 
+        public T GetEntityById(Guid id)
+        {
+            var result = _dbset.FirstOrDefault(entity => entity.Id == id);
+            return result;
+        }
+
         public void Save()
         {
-           _context.SaveChanges();
+            _context.SaveChanges();
         }
     }
 }
