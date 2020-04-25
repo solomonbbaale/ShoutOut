@@ -1,7 +1,14 @@
-﻿namespace ShoutOut.Core.Entities
+﻿using System;
+
+namespace ShoutOut.Core.Entities
 {
     public class Entity
     {
-        public int Id { get; set; }
+        public Guid Id { get; protected set; }
+
+        public Entity()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }
