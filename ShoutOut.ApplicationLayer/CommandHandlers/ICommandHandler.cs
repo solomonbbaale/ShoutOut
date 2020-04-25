@@ -9,4 +9,3 @@ namespace ShoutOut.ApplicationLayer.CommandHandlers
         Result Execute(T command);
     }
 }
-

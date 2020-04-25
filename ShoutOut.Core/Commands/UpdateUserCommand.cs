@@ -1,20 +1,27 @@
-﻿using ShoutOut.Core.Commands.Interfaces;
+﻿using System;
+using ShoutOut.Core.Commands.Interfaces;
 
 namespace ShoutOut.Core.Commands
 {
     public class UpdateUserCommand:ICommand
     {
-        private string _handle;
-        private string _firstName;
-        private string _lastName;
-        private string _bio;
+        public readonly string Handle;
+        public readonly string FirstName;
+        public readonly string LastName;
+        public readonly string Bio;
+        public readonly string Email;
+        public readonly string Profile;
+        public readonly Guid UserId;
 
-        public UpdateUserCommand(int userId,string handle, string firstName, string lastName, string bio, string email, string profile)
+        public UpdateUserCommand(Guid userId,string handle, string firstName, string lastName, string bio, string email, string profile)
         {
-            _handle = handle;
-            _firstName = firstName;
-            _lastName = lastName;
-            _bio = bio;
+            UserId = userId;
+            Handle = handle;
+            FirstName = firstName; 
+            LastName = lastName;
+            Bio = bio;
+            Email = email;
+            Profile = profile;
         }
     }
 }

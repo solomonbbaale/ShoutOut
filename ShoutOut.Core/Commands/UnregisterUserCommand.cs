@@ -1,14 +1,15 @@
-﻿using ShoutOut.Core.Commands.Interfaces;
+﻿using System;
+using ShoutOut.Core.Commands.Interfaces;
 
 namespace ShoutOut.Core.Commands
 {
     public class UnregisterUserCommand:ICommand
     {
-        private readonly int _userid;
+        public readonly Guid Userid;
 
-        public UnregisterUserCommand(int userid)
+        public UnregisterUserCommand(Guid userid)
         {
-            _userid = userid;
+            Userid = userid;
         }
     }
 }
