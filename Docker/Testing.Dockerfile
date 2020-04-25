@@ -20,6 +20,7 @@ RUN dotnet restore ShoutOut.Tests/ShoutOut.Tests.csproj
 RUN ls -alR
 COPY . .
 
+
 RUN dotnet test /src/ShoutOut.Tests/ShoutOut.Tests.csproj
 
 
