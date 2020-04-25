@@ -40,4 +40,8 @@
     <ProjectReference Include="..\ShoutOutApi\ShoutOutApi.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Handlers\" />
+  </ItemGroup>
+
 </Project>
