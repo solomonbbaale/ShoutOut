@@ -1,0 +1,24 @@
+﻿version: "3.3"
+services:
+  sqlserver:
+     build:
+       context: ./
+       dockerfile: ./Docker/Sql.Dockerfile
+     ports:
+       - "1433:1433"
+     networks:
+        - integration_testing
+
+  integration_tests:
+     build:
+       context: ./
+       dockerfile: ./Docker/Testing.Dockerfile
+     depends_on:
+       - sqlserver
+     ports:
+        - "5000:5000"
+     networks:
+        - integration_testing
+
+networks:
+    integration_testing:
