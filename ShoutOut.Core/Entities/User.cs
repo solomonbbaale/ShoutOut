@@ -23,5 +23,16 @@ namespace ShoutOut.Core.Entities
         public string Bio { get; set; }
         public string Email { get; set; }
         public string Profile { get; set; }
+
+        public void UpdateUser(string handle, string firstName, string lastName, string bio, string email,
+            string profile)
+        {
+            Handle = handle;
+            FirstName = firstName;
+            LastName = lastName;
+            Bio = bio;
+            Email = email;
+            Profile = profile;
+        }
     }
 }
