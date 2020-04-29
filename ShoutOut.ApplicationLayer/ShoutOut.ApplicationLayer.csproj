@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShoutOut.Core\ShoutOut.Core.csproj" />
+    <ProjectReference Include="..\ShoutOut.Infrastructure\ShoutOut.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
