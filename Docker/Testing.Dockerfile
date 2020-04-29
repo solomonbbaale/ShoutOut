@@ -24,6 +24,8 @@ RUN dotnet publish /src/ShoutOut.Tests/ShoutOut.Tests.csproj -c Release -o outpu
 
 WORKDIR /src/output/
 
+ENV TEAMCITY_PROJECT_NAME=fake
+
 ENTRYPOINT [ "dotnet","test","ShoutOut.Tests.dll" ]
 # RUN dotnet test /src/ShoutOut.Tests/ShoutOut.Tests.csproj
 
