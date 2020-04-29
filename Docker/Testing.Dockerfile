@@ -20,8 +20,12 @@ RUN dotnet restore ShoutOut.Tests/ShoutOut.Tests.csproj
 RUN ls -alR
 COPY . .
 
+RUN dotnet publish /src/ShoutOut.Tests/ShoutOut.Tests.csproj -c Release -o output
 
-RUN dotnet test /src/ShoutOut.Tests/ShoutOut.Tests.csproj
+WORKDIR /src/output
+
+ENTRYPOINT [ "dotnet","test","ShoutOut.Tests.dll" ]
+# RUN dotnet test /src/ShoutOut.Tests/ShoutOut.Tests.csproj
 
 
 
