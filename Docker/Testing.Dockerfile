@@ -22,7 +22,7 @@ COPY . .
 
 RUN dotnet publish /src/ShoutOut.Tests/ShoutOut.Tests.csproj -c Release -o output
 
-WORKDIR /src/output
+WORKDIR /src/output/
 
 ENTRYPOINT [ "dotnet","test","ShoutOut.Tests.dll" ]
 # RUN dotnet test /src/ShoutOut.Tests/ShoutOut.Tests.csproj
