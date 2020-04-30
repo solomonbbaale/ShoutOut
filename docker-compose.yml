@@ -7,18 +7,18 @@ services:
      ports:
        - "1433:1433"
      networks:
-        - integration_testing
+        - development_network
 
   integration_tests:
      build:
        context: ./
-       dockerfile: ./Docker/Testing.Dockerfile
+       dockerfile: ./Docker/Dev.Dockerfile
      depends_on:
        - sqlserver
      ports:
         - "5000:5000"
      networks:
-        - integration_testing
+        - development_network
 
 networks:
-    integration_testing:
+    development_network:
