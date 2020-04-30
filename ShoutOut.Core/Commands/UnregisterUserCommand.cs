@@ -3,11 +3,11 @@ using ShoutOut.Core.Commands.Interfaces;
 
 namespace ShoutOut.Core.Commands
 {
-    public class UnregisterUserCommand:ICommand
+    public class UnRegisterUserCommand:ICommand
     {
         public readonly Guid Userid;
 
-        public UnregisterUserCommand(Guid userid)
+        public UnRegisterUserCommand(Guid userid)
         {
             Userid = userid;
         }
