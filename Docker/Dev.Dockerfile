@@ -24,8 +24,14 @@ RUN ls -alR
 ##copy whole solution into the container
 COPY . .
 
-##run tests
-RUN dotnet test /src/ShoutOut.Tests/ShoutOut.Tests.csproj
+RUN dotnet publish /src/ShoutOut.Tests/ShoutOut.Tests.csproj -c Release -o output
+
+WORKDIR /src/output/
+
+ENV TEAMCITY_PROJECT_NAME=fake
+
+ENTRYPOINT [ "dotnet","test","ShoutOut.Tests.dll" ]
+# RUN dotnet test /src/ShoutOut.Tests/ShoutOut.Tests.csproj
 
 
 
