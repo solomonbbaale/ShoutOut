@@ -7,8 +7,7 @@ namespace ShoutOut.Infrastructure.Repository
     {
         void Add(T entity);
         void Delete(T entity);
-        void Save(); 
-        void Update(T entity);
-        T GetEntityById(Guid id);
+        void Save();
+        public T GetEntityById(Guid id);
     }
 }

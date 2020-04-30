@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ShoutOut.Core.Entities
 {
     public class Post : Entity
     {
         public Post() { }
-        public Post(string title, string message, Guid posterOwnerId, User postOwner)
+        public Post(string title, string message, User owner, int posterOwnerId, User postOwner)
         {
             Title = title;
             Message = message;
@@ -15,16 +14,10 @@ namespace ShoutOut.Core.Entities
             Replies = new List<Post>();
         }
 
-        public string Title { get; protected set; }
-        public string Message { get; protected set; }
-        public virtual ICollection<Post> Replies { get; protected set; }
-        public User PostOwner { get; protected set; }
-        public Guid PosterOwnerId { get; protected set; }
-
-        public void UpdatePost(string title, string message)
-        {
-            Title = title;
-            Message = message;
-        }
+        public string Title { get; set; }
+        public string Message { get; set; }
+        public IEnumerable<Post> Replies { get; }
+        public User PostOwner { get; set; }
+        public int PosterOwnerId { get; set; }
     }
 }

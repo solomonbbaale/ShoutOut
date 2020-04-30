@@ -27,12 +27,6 @@ namespace ShoutOut.Infrastructure.Repository
             var item = _dbset.Remove(entity);
         }
 
-        public void Update(T entity)
-        {
-            _dbset.Update(entity);
-        }
-
-        //This may or maynot return an entity could user maybe<t>
         public T GetEntityById(Guid id)
         {
             var result = _dbset.FirstOrDefault(entity => entity.Id == id);
