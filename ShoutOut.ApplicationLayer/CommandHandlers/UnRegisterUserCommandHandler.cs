@@ -1,11 +1,12 @@
-﻿using ShoutOut.ApplicationLayer.Helpers;
+﻿using ShoutOut.ApplicationLayer.CommandHandlers.Interfaces;
+using ShoutOut.ApplicationLayer.Helpers;
 using ShoutOut.Core.Commands;
 using ShoutOut.Core.Entities;
 using ShoutOut.Infrastructure.Repository;
 
 namespace ShoutOut.ApplicationLayer.CommandHandlers
 {
-    public class UnRegisterUserCommandHandler : ICommandHandler<UnregisterUserCommand>
+    public class UnRegisterUserCommandHandler : ICommandHandler<UnRegisterUserCommand>
     {
         private readonly IRepository<User> _userRepository;
 
@@ -14,9 +15,11 @@ namespace ShoutOut.ApplicationLayer.CommandHandlers
             _userRepository = userRepository;
         }
 
-        public Result Execute(UnregisterUserCommand command)
+        public Result Execute(UnRegisterUserCommand command)
         {
             var user = _userRepository.GetEntityById(command.Userid);
+            
+            //TODO: MAY BE REMOVE THIS STRING AND PUT IT SOMEWHERE ELSE
 
             if (user == null) return Result.Fail(new[] { "User not found" });
 

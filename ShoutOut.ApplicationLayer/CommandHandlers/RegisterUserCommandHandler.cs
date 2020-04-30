@@ -1,4 +1,5 @@
-﻿using ShoutOut.ApplicationLayer.Helpers;
+﻿using ShoutOut.ApplicationLayer.CommandHandlers.Interfaces;
+using ShoutOut.ApplicationLayer.Helpers;
 using ShoutOut.Core.Commands;
 using ShoutOut.Core.Entities;
 using ShoutOut.Infrastructure.Repository;
@@ -15,18 +16,12 @@ namespace ShoutOut.ApplicationLayer.CommandHandlers
         }
 
         //TODO:do we need a decorator attribute for handling exceptions
+
         //TODO:what happens when an exception is thrown
+
         public Result Execute(RegisterUserCommand command)
         {
-            var user = new User
-            {
-                FirstName = command.FirstName,
-                LastName = command.LastName,
-                Profile = command.Profile,
-                Handle = command.Handle,
-                Email = command.Email,
-                Bio = command.Bio,
-            };
+            var user = new User(command.Handle, command.FirstName, command.LastName, command.Bio, command.Email, command.Profile);
 
             _userRepository.Add(user);
 
